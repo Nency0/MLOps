@@ -7,10 +7,10 @@ def test_temporal_variable_transformer(sample_input_data):
     extracter = ExtractLetterTransformer(
         variables=config.model_config.cabin_var_imputation
     )
-    assert sample_input_data["cabin"].iat[5] == "G6"
+    assert sample_input_data["cabin"].iat[246] == 'C106'
 
     # When
     subject = extracter.fit_transform(sample_input_data)
 
     # Then
-    assert subject["cabin"].iat[5] == "G"
+    assert subject["cabin"].iat[246] == "C"
